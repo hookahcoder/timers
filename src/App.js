@@ -37,7 +37,7 @@ function App() {
       'english': '03/27/2021',
       'travel': '11/28/2021',
     }
-    
+
     let timeDifference = ms(Math.abs(new Date(database[selection]) - new Date()))
     if (timeDifference.year) {
       setDifference(timeDifference.year + ' y ' + timeDifference.month + ' m ' + timeDifference.day + ' d')
@@ -48,11 +48,13 @@ function App() {
 
   return (
     <div className='centered'>
-      <h1>{selection}: {difference}</h1>
-      <button onClick={() => setSelection('coding')}>coding</button>
-      <button onClick={() => setSelection('english')}>english</button>
-      <button onClick={() => setSelection('travel')}>travel</button>
-      <button onClick={() => setSelection('work')}>work</button>
+      <div className='main'>
+        <h1>{selection}: {difference}</h1>
+        <button onClick={() => setSelection('coding')}>coding</button>
+        <button onClick={() => setSelection('english')}>english</button>
+        <button onClick={() => setSelection('travel')}>travel</button>
+        <button onClick={() => setSelection('work')}>work</button>
+      </div>
     </div>
   )
 }
